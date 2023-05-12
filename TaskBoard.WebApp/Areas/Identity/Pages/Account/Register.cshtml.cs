@@ -35,7 +35,7 @@ namespace TaskBoard.WebApp.Areas.Identity.Pages.Account
         {
             [Required]
             [MaxLength(MaxUserUsername)]
-            [Display(Name = "Username")]
+            [Display(Name = "Nazwa użytkownika")]
             public string Username { get; set; }
 
             [Required]
@@ -47,22 +47,22 @@ namespace TaskBoard.WebApp.Areas.Identity.Pages.Account
             [Required]
             [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Hasło")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "Potwierdz hasło")]
+            [Compare("Password", ErrorMessage = "Hasła nie są takie same.")]
             public string ConfirmPassword { get; set; }
 
             [Required]
             [MaxLength(MaxUserFirstName)]
-            [Display(Name = "First Name")]
+            [Display(Name = "Imię")]
             public string FirstName { get; set; }
 
             [Required]
             [MaxLength(MaxUserLastName)]
-            [Display(Name = "Last Name")]
+            [Display(Name = "Nazwisko")]
             public string LastName { get; set; }
         }
 

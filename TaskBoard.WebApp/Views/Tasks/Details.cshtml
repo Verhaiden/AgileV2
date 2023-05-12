@@ -1,7 +1,7 @@
 ﻿@model TaskDetailsViewModel
 
 @{
-    ViewBag.Title = "View Task Details";
+    ViewBag.Title = "Szczególy zadania";
 }
 
 <link href="~/css/style.css" rel="stylesheet" type="text/css" />
@@ -15,23 +15,23 @@
         <td>@Model.Id</td>
     </tr>
     <tr class="title">
-        <th>Title</th>
+        <th>Tytuł</th>
         <td>@Model.Title</td>
     </tr>
     <tr class="description">
-        <th>Description</th>
+        <th>Opis</th>
         <td>@Model.Description</td>
     </tr>
     <tr class="board">
-        <th>Board</th>
+        <th>Tablica</th>
         <td>@Model.Board</td>
     </tr>
     <tr class="board">
-        <th>Owner</th>
+        <th>Właściciel</th>
         <td>@Model.Owner</td>
     </tr>
     <tr class="dateCreated">
-        <th>Created on</th>
+        <th>Data utworzenia</th>
         <td>@Model.CreatedOn</td>
     </tr>
     @if (Model.Owner == this.User.Identity.Name)
@@ -40,8 +40,8 @@
             <th>Actions</th>
 
             <td>
-                <a asp-controller="Tasks" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Edit</a>
-                <a asp-controller="Tasks" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-secondary">Delete</a>
+                <a asp-controller="Tasks" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Edytuj</a>
+                <a asp-controller="Tasks" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-secondary">Usuń</a>
             </td>
         </tr>
     }

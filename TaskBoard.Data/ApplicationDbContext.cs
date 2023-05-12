@@ -13,6 +13,7 @@ namespace TaskBoard.Data
         private Board OpenBoard { get; set; }
         private Board InProgressBoard { get; set; }
         private Board DoneBoard { get; set; }
+        private Board TestsBoard { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, bool seedDb = true)
             : base(options)
@@ -93,15 +94,15 @@ namespace TaskBoard.Data
 
             this.GuestUser = new User()
             {
-                UserName = "guest",
-                NormalizedUserName = "GUEST",
-                Email = "guest@mail.com",
-                NormalizedEmail = "GUEST@MAIL.COM",
-                FirstName = "Guest",
-                LastName = "User",
+                UserName = "gosc",
+                NormalizedUserName = "gosc",
+                Email = "gosc@mail.com",
+                NormalizedEmail = "gosc@MAIL.COM",
+                FirstName = "gosc",
+                LastName = "gosc",
             };
 
-            this.GuestUser.PasswordHash = hasher.HashPassword(this.GuestUser, "guest");
+            this.GuestUser.PasswordHash = hasher.HashPassword(this.GuestUser, "gosc");
         }
 
         private void SeedBoards()
@@ -122,6 +123,12 @@ namespace TaskBoard.Data
             {
                 Id = 3,
                 Name = "Gotowe"
+            };
+
+            this.TestsBoard = new Board()
+            {
+                Id = 3,
+                Name = "Testy"
             };
         }
     }

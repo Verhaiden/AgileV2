@@ -3,25 +3,25 @@
 <table class="tasks-entry form">
     <tr>
         <th>
-            <label asp-for="Title"></label>
+            <label asp-for="Title">Tytuł</label>
         </th>
         <td>
-            <input asp-for="Title" class="form-control" placeholder="Title...">
+            <input asp-for="Title" class="form-control" placeholder="Tytuł...">
             <span asp-validation-for="Title" class="small text-danger"></span>
         </td>
     </tr>
     <tr>
         <th>
-            <label asp-for="Description"></label>
+            <label asp-for="Description">Opis</label>
         </th>
         <td>
-            <textarea asp-for="Description" class="form-control" placeholder="Description..."></textarea>
+            <textarea asp-for="Description" class="form-control" placeholder="Opis..."></textarea>
             <span asp-validation-for="Description" class="small text-danger"></span>
         </td>
     </tr>
     <tr>
         <th>
-            <label asp-for="BoardId"></label>
+            <label asp-for="BoardId">Etap</label>
         </th>
         <td>
             <select asp-for="BoardId" class="form-control">

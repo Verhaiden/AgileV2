@@ -88,7 +88,7 @@ namespace TaskBoard.WebAPI.Controllers
                     Expiration = token.ValidTo
                 });
             }
-            return Unauthorized(new ResponseMsg { Message = "Invalid username or password!" });
+            return Unauthorized(new ResponseMsg { Message = "Niewłaściwy login lub hasło!" });
         }
 
         /// <summary>
@@ -115,11 +115,11 @@ namespace TaskBoard.WebAPI.Controllers
             var userExists = await userManager.FindByNameAsync(model.Username);
             if (userExists != null)
                 return BadRequest(new ResponseMsg
-                { Message = "User already exists!" });
+                { Message = "Nazwa już wykorzystana!" });
 
             if (model.Password != model.ConfirmPassword)
                 return BadRequest(new ResponseMsg
-                { Message = "Password and Confirm Password don't match!" });
+                { Message = "Hasła nie zgadzają się!" });
 
             User user = new User()
             {
@@ -133,9 +133,9 @@ namespace TaskBoard.WebAPI.Controllers
             var result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
                 return BadRequest(new ResponseMsg
-                { Message = "User creation failed! Please check user details and try again." });
+                { Message = "Błąd tworzenia użytkownika, sprawdz dane i spróbuj ponownie." });
 
-            return Ok(new ResponseMsg { Message = "User created successfully!" });
+            return Ok(new ResponseMsg { Message = "Poprawne utworzenie użytkownika!" });
         }
 
         /// <summary>

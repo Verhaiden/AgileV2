@@ -10,12 +10,12 @@ namespace TaskBoard.WebApp.Models.Task
     {
         [Required]
         [StringLength(MaxTaskTitle, MinimumLength = MinTaskTitle,
-            ErrorMessage = "Title should be at least {2} characters long.")]
+            ErrorMessage = "Tytuł powinien mieć conajmniej {2} znaki długości.")]
         public string Title { get; set; }
 
         [Required]
         [StringLength(MaxTaskDescription, MinimumLength = MinTaskDescription, 
-            ErrorMessage = "Description should be at least {2} characters long.")]
+            ErrorMessage = "Opis powinien mieć co najmniej {2} znaki długości.")]
         public string Description { get; set; }
 
         [Display(Name = "Board")]

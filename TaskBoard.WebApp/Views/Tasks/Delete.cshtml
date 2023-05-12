@@ -1,7 +1,7 @@
 ﻿@model TaskViewModel
 
 @{
-    ViewData["Title"] = "Delete Task";
+    ViewData["Title"] = "Usuń zadanie";
 }
 
 <link href="~/css/style.css" rel="stylesheet" type="text/css" />
@@ -13,7 +13,7 @@
     <table class="tasks-entry form">
         <tr>
             <th>
-                <label asp-for="Title" class="control-label"></label>
+                <label asp-for="Title" class="control-label">Tytuł</label>
             </th>
             <td>
                 <input asp-for="Title" class="form-control" disabled="disabled" />
@@ -21,14 +21,14 @@
         </tr>
         <tr>
             <th>
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label">Opis</label>
             </th>
             <td>
                 <textarea asp-for="Description" class="form-control" disabled="disabled"></textarea>
             </td>
         </tr>
     </table>
-    <input type="submit" value="Delete" class="btn btn-primary" />
+    <input type="submit" value="Usuń" class="btn btn-primary" />
 </form>
 
 

@@ -62,7 +62,7 @@ namespace TaskBoard.WebApp.Controllers
         {
             if (!GetBoards().Any(b => b.Id == taskModel.BoardId))
             {
-                this.ModelState.AddModelError(nameof(taskModel.BoardId), "Board does not exist.");
+                this.ModelState.AddModelError(nameof(taskModel.BoardId), "Tablica nie istnieje.");
             }
 
             if (!ModelState.IsValid)
@@ -94,14 +94,14 @@ namespace TaskBoard.WebApp.Controllers
             Task task = dbContext.Tasks.Find(id);
             if (task == null)
             {
-                // When task with this id doesn't exist
+                // jeśli zadanie z tym id nie istnieje
                 return BadRequest();
             }
 
             string currentUserId = GetUserId();
             if (currentUserId != task.OwnerId)
             {
-                // When current user is not an owner
+                // jeśli użytkownik nie jest właścicielem
                 return Unauthorized();
             }
 
@@ -128,13 +128,13 @@ namespace TaskBoard.WebApp.Controllers
             string currentUserId = GetUserId();
             if (currentUserId != task.OwnerId)
             {
-                // Not an owner -> return "Unauthorized"
+                // jeśli nie jest właścicielem 
                 return Unauthorized();
             }
 
             if (!GetBoards().Any(b => b.Id == taskModel.BoardId))
             {
-                this.ModelState.AddModelError(nameof(taskModel.BoardId), "Board does not exist.");
+                this.ModelState.AddModelError(nameof(taskModel.BoardId), "Tablica nie istnieje.");
             }
 
             if (!ModelState.IsValid)
@@ -157,14 +157,14 @@ namespace TaskBoard.WebApp.Controllers
             Task task = dbContext.Tasks.Find(id);
             if (task == null)
             {
-                // When task with this id doesn't exist
+                // jeśli zadanie z tym id nie istnieje
                 return BadRequest();
             }
 
             string currentUserId = GetUserId();
             if (currentUserId != task.OwnerId)
             {
-                // When current user is not an owner
+                // jeśli nie jest właścicielem 
                 return Unauthorized();
             }
 
@@ -190,7 +190,7 @@ namespace TaskBoard.WebApp.Controllers
             string currentUserId = GetUserId();
             if (currentUserId != task.OwnerId)
             {
-                // Not an owner -> return "Unauthorized"
+                // jeśli nie jest właścicielem 
                 return Unauthorized();
             }
 

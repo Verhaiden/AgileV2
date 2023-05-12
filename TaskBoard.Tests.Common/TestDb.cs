@@ -48,52 +48,52 @@ namespace TaskBoard.Tests.Common
             var userManager = new UserManager<User>(
                 userStore, null, hasher, null, null, normalizer, null, null, null);
 
-            // Create boards: "Open", "In Progress", "Done"
+            // tworzenie tablic
             this.OpenBoard = new Board()
             {
                 Id = 1,
-                Name = "Open"
+                Name = "Nowe zadanie"
             };
             dbContext.Add(this.OpenBoard);
 
             this.InProgressBoard = new Board()
             {
                 Id = 2,
-                Name = "In Progress"
+                Name = "W trakcie"
             };
             dbContext.Add(this.InProgressBoard);
 
             this.DoneBoard = new Board()
             {
                 Id = 3,
-                Name = "Done"
+                Name = "Gotowe"
             };
             dbContext.Add(this.DoneBoard);
 
-            // Create GuestUser
+            // tworzenie GuestUser
             this.GuestUser = new User()
             {
-                UserName = "guest",
-                NormalizedUserName = "guest",
-                Email = "guest@mail.com",
-                NormalizedEmail = "guest@mail.com",
-                FirstName = "Guest",
-                LastName = "User",
+                UserName = "gosc",
+                NormalizedUserName = "gosc",
+                Email = "gosc@mail.com",
+                NormalizedEmail = "gosc@mail.com",
+                FirstName = "gosc",
+                LastName = "gosc",
             };
             userManager.CreateAsync(this.GuestUser, this.GuestUser.UserName).Wait();
 
-            // CSSTask has owner GuestUser
+            //   GuestUser jest właścicielem CSSTask
             this.CSSTask = new Task()
             {
-                Title = "Improve CSS styles",
-                Description = "Implement better styling for all public pages",
+                Title = "poprawić CSS",
+                Description = "Poprawić wyglą strony",
                 CreatedOn = DateTime.Now.AddDays(-200),
                 OwnerId = this.GuestUser.Id,
                 BoardId = this.OpenBoard.Id
             };
             dbContext.Add(this.CSSTask);
 
-            // Create UserMaria
+            // tworzenie UserMaria
             this.UserMaria = new User()
             {
                 UserName = "maria",
@@ -103,12 +103,12 @@ namespace TaskBoard.Tests.Common
             };
             userManager.CreateAsync(this.UserMaria, this.UserMaria.UserName).Wait();
 
-            // EditTask has owner UserMaria
+            //   UserMaria jest właścicielem EditTask
             this.EditTask = new Task()
             {
                 Id = 5,
-                Title = "Edit functionality",
-                Description = "Implement task editing functionality",
+                Title = "poprawić funkcje",
+                Description = "dodać edycje zadań",
                 CreatedOn = DateTime.Now.AddDays(-20),
                 BoardId = this.OpenBoard.Id,
                 OwnerId = this.UserMaria.Id

@@ -392,7 +392,7 @@ namespace TaskBoard.WebAPI.Controllers
             if (!taskExists)
             {
                 return NotFound(
-                    new ResponseMsg { Message = $"Task #{id} not found." });
+                    new ResponseMsg { Message = $"Zadanie #{id} nie znalezione." });
             }
 
             var task = this.dbContext.Tasks.FirstOrDefault(t => t.Id == id);
@@ -400,7 +400,7 @@ namespace TaskBoard.WebAPI.Controllers
             if (GetCurrentUserId() != task.OwnerId)
             {
                 return Unauthorized(
-                    new ResponseMsg { Message = "Cannot delete task, when not an owner." });
+                    new ResponseMsg { Message = "Nie można usunąć zadania jeśli nie jesteś właścicielem" });
             }
 
             var taskListingModel = CreateTaskListingModelById(task.Id);
