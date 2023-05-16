@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - tablica zadań</title>
+    <title>@ViewData["Tytuł"] Tablica Trello ver. 2.0</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/style.css" />
@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span>🖹</span>Tablica zadań PBS</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span>🖹</span>Tablica Trello ver. 2.0</a>
                 <button class="navbar-toggler" onclick="addClass()" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
                         <a class="nav-link" asp-controller="Boards" asp-action="All">Tablica zadań</a>
                     </li>
                     <li>
-                        <a class="nav-link" asp-controller="Tasks" asp-action="Create">Dodaj zadanie</a>
+                        <a class="nav-link" asp-controller="Tasks" asp-action="Create">Utwórz</a>
                     </li>
                     <li>
                         <a class="nav-link" asp-controller="Tasks" asp-action="Search">Szukaj</a>
@@ -57,7 +57,14 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-             @DateTime.Now.Year - Tablica zadań.PBS
+            <a class="nav-link" asp-controller="Home" asp-action="Index"></a>
+            <script>
+                dzisiaj=new Date();
+                document.write("Dziś jest: "
+                + dzisiaj.getDate() + "." + (dzisiaj.getMonth() + 1) + "." + dzisiaj.getYear()+" ")
+                document.write("Godzina: "+dzisiaj.getHours()+":"+dzisiaj.getMinutes())
+            </script>
+
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
