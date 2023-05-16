@@ -59,7 +59,7 @@ namespace TaskBoard.Tests.Common
             this.InProgressBoard = new Board()
             {
                 Id = 2,
-                Name = "W trakcie"
+                Name = "W trakcie realizacji"
             };
             dbContext.Add(this.InProgressBoard);
 

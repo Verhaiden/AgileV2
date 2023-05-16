@@ -1,13 +1,15 @@
 ﻿body {
     font-family: Arial, Helvetica, sans-serif;
+    background: rgb(18, 27, 24);
+    color: #eee;
 }
 
 .navbar {
-    background-color: rgb(181, 216, 255);
+    background-color: rgb(175, 247, 17);
 }
 
 .footer {
-    background-color: rgb(181, 216, 255);
+    background-color: rgb(175, 247, 17);
 }
 
 @media (min-width: 0px) {
@@ -29,20 +31,20 @@
 }
 
 section.home-page {
-    background: rgb(181, 216, 255);
+    background: rgb(18, 27, 24);
     padding: 20px;
     border-radius: 5px;
-    border: 1px solid rgb(175 207 243);
+    border: 1px solid rgb(18, 27, 24));
     position: initial;
 }
 
 div.home-page-icons a {
-    color: rgb(86, 40, 129);
-    background: rgb(181, 216, 255);
+    color: rgb(175, 247, 17);
+    background: rgb(106, 120, 124);
     text-decoration: none;
     padding: 0px 10px;
     border-radius: 5px;
-    border: 1px solid rgb(125, 170, 238);
+    border: 1px solid #e0e0e0;
     margin: 10px 10px 0px 0px;
     text-align: center;
     display: inline-block;
@@ -55,6 +57,7 @@ div.home-page-icons a {
     div.home-page-icons a span.icon {
         display: block;
         font-size: 3em;
+        color: rgb(175, 247, 17);
     }
 
     div.home-page-icons a:hover {
@@ -64,7 +67,7 @@ div.home-page-icons a {
 
 aside {
     grid-area: aside;
-    background: rgb(181, 216, 255);
+    background: rgb(106, 120, 124);
     border-radius: 3px;
     border: 1px solid rgb(175 207 243);
     position: absolute;
@@ -83,7 +86,7 @@ aside {
             display: block;
             padding: 5px;
             text-decoration: none;
-            color: rgb(86, 40, 129)
+            color: rgb(175, 247, 17)
         }
 
             aside ul a:hover {
@@ -149,18 +152,18 @@ table {
     }
 
     table tr:nth-child(even) {
-        background-color: #dae9f3;
+        background-color: rgb(67, 69, 67);
     }
 
     table tr:hover {
-        background-color: rgb(173, 204, 240);
+        background-color: rgb(96, 123, 153);
     }
 
     table th {
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
-        background-color: rgb(84, 144, 212);
+        background-color: rgb(106, 120, 124);
         color: white;
     }
 
@@ -185,7 +188,7 @@ div.tasks-grid {
 }
 
 div.tasks-grid div.task h1 {
-    background: #eee;
+    background: rgb(18, 27, 24);
     padding: 8px 10px;
     border-radius: 2px;
 }
@@ -248,7 +251,7 @@ input.btn {
     padding: 15px 30px;
     border-radius: 10px;
     outline: none;
-    background: #9bcef0;
+    background: rgb(106, 120, 124);
     width: 100%;
     margin: 0 auto;
     display: block;

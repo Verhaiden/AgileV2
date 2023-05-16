@@ -7,17 +7,17 @@
 <section class="home-page">
     @if (!this.User.Identity.IsAuthenticated)
     {
-        <h1 class="text-center">Tablica zadań</h1>
+        <h1 class="text-center">Tablica projektu: Tutaj znajdziesz swoje zadania</h1>
         <hr class="hr-2 bg-dark" />
-        <h3 class="mt-4"><a class="font-weight-bold" href="/Identity/Account/Login">Logowanie</a> aby rozpocząć tworzenie zadań</h3>
-        <h5>(Domyślne dane <b>gosc</b> / <b>gosc</b>)</h5>
-        <h3 class="mt-4"><a class="font-weight-bold" href="/Identity/Account/Register">Rejestracja</a> Jeśli nie masz konta.</h3>
+        <h3 class="mt-4"><a class="font-weight-bold" href="/Identity/Account/Login">Zaloguj się</a> aby zobaczyć stan projektu.</h3>
+        <h5>(Domyślnie: <b>guest</b> / <b>guest</b>)</h5>
+        <h3 class="mt-4"><a class="font-weight-bold" href="/Identity/Account/Register">Zarejetruj się</a> jeżeli nie masz konta.</h3>
     }
     else
     {
         <h1 class="text-center">Witaj, @this.User.Identity.Name</h1>
         <hr class="hr-2 bg-secondary" />
-        <h4 class="mt-4 text-center">Strona główna</h4>
+        <h4 class="mt-4 text-center">Oto twoja tablica projektowa - zacznij realizować nowe zadania.</h4>
     }
     <br />
     <span class="boardSpan">Zadania: <b>@Model.AllTasksCount</b></span>
@@ -29,9 +29,17 @@
             </li>
         }
     </ul>
-    @if (Model.UserTasksCount > -1)
+    @if (Model.UserTasksCount > -1 && Model.UserTasksCount <2)
+    {
+        <h5>Masz: <b>@Model.UserTasksCount</b> zadanie</h5>
+    }
+    @if (Model.UserTasksCount > 1 && Model.UserTasksCount < 5)
     {
         <h5>Masz: <b>@Model.UserTasksCount</b> zadania</h5>
+    }
+    @if (Model.UserTasksCount > 5 )
+    {
+        <h5>Masz: <b>@Model.UserTasksCount</b> zadań</h5>
     }
 </section>
 
