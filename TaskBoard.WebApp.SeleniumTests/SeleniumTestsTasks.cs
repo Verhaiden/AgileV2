@@ -37,8 +37,8 @@ namespace TaskBoard.WebApp.SeleniumTests
         {
         }
 
-        private void CreateTask(out string taskTitle, out string taskDescription)
-        {
-        }
+        //private void CreateTask(out string taskTitle, out string taskDescription)
+        //{
+        //}
     }
 }

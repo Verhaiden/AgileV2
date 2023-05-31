@@ -12,7 +12,14 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span>🖹</span>Tablica Trello ver. 2.0</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify"><line x1="21" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg>
+                </a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span>
+                        Tablica Trello ver. 2.0
+                    </span>
+                </a>
                 <button class="navbar-toggler" onclick="addClass()" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,6 +30,20 @@
                 </div>
             </div>
         </nav>
+        <script>
+            window.onload = function() {
+            function aktualizujDate() {
+                var dzisiaj = new Date();
+                var data = dzisiaj.toLocaleDateString(); // Pobierz lokalną datę w odpowiednim formacie
+                var godzina = dzisiaj.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', second: '2-digit'}); // Pobierz lokalną godzinę w odpowiednim formacie
+
+                document.getElementById("data-godzina").innerHTML = "Dziś jest: " + data + " Godzina: " + godzina;
+            }
+
+            setInterval(aktualizujDate, 1000); // Aktualizuj co 1000 ms (1 sekunda)
+            aktualizujDate(); // Wywołaj funkcję aktualizacji na początku, aby pokazać aktualną datę i godzinę od razu
+            };
+        </script>
     </header>
     <div class="container">
         @if (this.User.Identity.IsAuthenticated)
@@ -58,15 +79,10 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             <a class="nav-link" asp-controller="Home" asp-action="Index"></a>
-            <script>
-                dzisiaj=new Date();
-                document.write("Dziś jest: "
-                + dzisiaj.getDate() + "." + (dzisiaj.getMonth() + 1) + "." + dzisiaj.getYear()+" ")
-                document.write("Godzina: "+dzisiaj.getHours()+":"+dzisiaj.getMinutes())
-            </script>
-
+            <span id="data-godzina"></span>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

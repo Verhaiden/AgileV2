@@ -1,20 +1,48 @@
 ﻿body {
     font-family: Arial, Helvetica, sans-serif;
-    background: rgb(18, 27, 24);
+    background-color: mintcream; 
     color: #eee;
 }
 
 .navbar {
-    background-color: rgb(175, 247, 17);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: orange;
+    border-radius: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
 }
 
 .footer {
-    background-color: rgb(175, 247, 17);
+    position: fixed;
+    background-color: orange;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 0 10px 10px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
 }
 
 @media (min-width: 0px) {
     .container {
         max-width: 100%;
+    }
+    .navbar {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+    .footer {
+        margin: 10px;
+        width: calc(100% - 20px);
     }
 }
 
@@ -31,16 +59,20 @@
 }
 
 section.home-page {
-    background: rgb(18, 27, 24);
-    padding: 20px;
+    margin-top: 110px;
+    padding: 10px 10px;
+    background-color: lightgoldenrodyellow;
+    color: black;
     border-radius: 5px;
-    border: 1px solid rgb(18, 27, 24));
-    position: initial;
+    width: auto;
+    height: 100%;
+    border: 1px solid rgb(175 207 243);
+    text-decoration: none;
 }
 
 div.home-page-icons a {
-    color: rgb(175, 247, 17);
-    background: rgb(106, 120, 124);
+    color: black;
+    background-color: lightgoldenrodyellow;
     text-decoration: none;
     padding: 0px 10px;
     border-radius: 5px;
@@ -57,7 +89,7 @@ div.home-page-icons a {
     div.home-page-icons a span.icon {
         display: block;
         font-size: 3em;
-        color: rgb(175, 247, 17);
+        color: lightblue;
     }
 
     div.home-page-icons a:hover {
@@ -67,13 +99,11 @@ div.home-page-icons a {
 
 aside {
     grid-area: aside;
-    background: rgb(106, 120, 124);
+    background-color: lightgoldenrodyellow;
     border-radius: 3px;
     border: 1px solid rgb(175 207 243);
     position: absolute;
     font-size: 18px;
-    top: 103px;
-    bottom: 75px;
 }
 
     aside ul {
@@ -86,7 +116,7 @@ aside {
             display: block;
             padding: 5px;
             text-decoration: none;
-            color: rgb(175, 247, 17)
+            color: black;
         }
 
             aside ul a:hover {
