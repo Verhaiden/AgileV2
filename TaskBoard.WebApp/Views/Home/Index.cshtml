@@ -45,12 +45,12 @@
 
 @if (this.User.Identity.IsAuthenticated)
 {
-    <div class="home-page-icons">
+    <div class="home-page-icons" >
         <a asp-area="" asp-controller="Boards">
             <span class="icon">🖹</span>
             <span>Tablica zadań</span>
         </a>
-        <a asp-area="" asp-controller="Tasks" asp-action="Create">
+        <a asp-area="" asp-controller="Tasks" asp-action="Create" >
             <span class="icon">✚</span>
             <span>Nowe zadanie</span>
         </a>

@@ -6,12 +6,12 @@
 
 <link href="~/css/style.css" rel="stylesheet" type="text/css" />
 
-<h2 class="text-center">@ViewBag.Title</h2>
+<h2 class="text-center" style="color: black; padding: 10px">@ViewBag.Title</h2>
 <hr />
 
 <form asp-action="Create">
     @await Html.PartialAsync("_TaskFormPartial.cshtml", Model)
-    <input class="btn btn-primary" type="submit" value="Dodaj" />
+    <input class="btn btn-primary" type="submit" value="Dodaj" style="margin-left: 0"/>
 </form>
 
 @section Scripts {

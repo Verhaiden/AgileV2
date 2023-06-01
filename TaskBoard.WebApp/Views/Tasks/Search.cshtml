@@ -6,7 +6,7 @@
 
 <link href="~/css/style.css" rel="stylesheet" type="text/css" />
 
-<h2 class="text-center">@ViewBag.Title</h2>
+<h2 class="text-center" style="color: black; padding: 10px">@ViewBag.Title</h2>
 <hr />
 
 @if (Context.Request.Method == "POST")
@@ -38,7 +38,7 @@ else if (Context.Request.Method == "POST")
             </td>
         </tr>
     </table>
-    <input class="btn btn-primary" type="submit" value="Wyszukaj" />
+    <input class="btn btn-primary" type="submit" value="Wyszukaj" style="margin-left: 0"/>
 </form>
 
 @section Scripts {

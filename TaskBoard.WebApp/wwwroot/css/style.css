@@ -2,6 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     background-color: mintcream; 
     color: #eee;
+    margin-top: 110px;
 }
 
 .navbar {
@@ -59,7 +60,6 @@
 }
 
 section.home-page {
-    margin-top: 110px;
     padding: 10px 10px;
     background-color: lightgoldenrodyellow;
     color: black;
@@ -98,7 +98,6 @@ div.home-page-icons a {
     }
 
 aside {
-    grid-area: aside;
     background-color: lightgoldenrodyellow;
     border-radius: 3px;
     border: 1px solid rgb(175 207 243);
@@ -108,7 +107,6 @@ aside {
 
     aside ul {
         list-style-type: none;
-        margin: 0px;
         padding: 10px;
     }
 
@@ -137,11 +135,11 @@ aside {
 }
 
 @media (max-width: 558px) {
-    aside {
+    /*aside {
         display: grid;
         position: initial;
         top: 90px;
-    }
+    }*/
 
     .moved-right {
         margin: 20px 0px 0px 0px;
@@ -201,6 +199,7 @@ div.tasks-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    margin-top: 50px;
 }
 
 @media (max-width: 1000px) {
@@ -266,7 +265,7 @@ table.task-details {
 
 form table {
     max-width: 800px;
-    margin: 0px auto 10px auto;
+    margin-top: 50px;
 }
 
     form table input, form table textarea, form table select {
