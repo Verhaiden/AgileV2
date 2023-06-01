@@ -1,0 +1,14 @@
+﻿@model TaskFormModel
+
+@{
+    ViewBag.Title = "Utwórz projekt";
+}
+
+<link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+<h2 class="text-center" style="color: black; padding: 10px">@ViewBag.Title</h2>
+<hr />
+
+<form asp-action="CreateBoard">
+    <input class="btn btn-primary" type="submit" value="Dodaj" style="margin-left: 0"/>
+</form>

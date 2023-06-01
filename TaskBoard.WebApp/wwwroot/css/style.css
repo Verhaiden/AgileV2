@@ -1,7 +1,7 @@
 ﻿body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: mintcream; 
-    color: #eee;
+    color: black;
     margin-top: 110px;
 }
 
@@ -217,9 +217,10 @@ div.tasks-grid {
 }
 
 div.tasks-grid div.task h1 {
-    background: rgb(18, 27, 24);
+    background-color: lightgrey;
     padding: 8px 10px;
     border-radius: 2px;
+    color: black;
 }
 
 table.task-entry {
